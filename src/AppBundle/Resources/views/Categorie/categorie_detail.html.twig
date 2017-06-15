@@ -1,0 +1,16 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CategorieDetail{% endblock %}
+
+{% block main %}
+    <p>{{"Nom : "}}{{categorie.nom}}</p>
+
+    <p>{{"Events liés : "}}
+    <p>
+        {% for e in categorie.event %}
+            <p>{{"Bonjour"}}</p>
+        {% endfor %}
+    </p>
+</p>
+
+{% endblock %}

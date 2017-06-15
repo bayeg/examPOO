@@ -5,9 +5,23 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <style>
+            header, menu, footer{
+                border: 1px black solid;
+                text-align: center;
+            }
+        </style>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block body %}
+            <header>{% block header %}{{"HEADER"}}{% endblock %}</header>    
+            <menu>{% block menu %}
+                <a href="{{path("eventList")}}">{{"Events"}}</a>
+                <a href="{{path("categorieList")}}">{{"Categorie"}}</a>
+            {% endblock %}</menu>    
+            <main>{% block main %}{% endblock %}</main>    
+            <footer>{% block footer %}{{"FOOTER"}}{% endblock %}</footer>    
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

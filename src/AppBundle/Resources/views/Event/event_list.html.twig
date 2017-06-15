@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}AppBundle:Event:eventList{% endblock %}
+
+{% block main %}
+    {% for e in events%}
+        <div>
+            <ul>               
+                <a href="{{ path('eventDetail', 
+{"id" : e.id}
+)}}"><li>{{e.nom}}</li></a>                
+            </ul>            
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CategorieList{% endblock %}
+
+{% block main %}
+    {% for c in categories %}
+        <div>
+            <ul>               
+                <a href="{{ path('categorieDetail', 
+{"id" : c.id}
+)}}"><li>{{c.nom}}</li></a>                
+            </ul>            
+        </div>
+    {% endfor %}
+{% endblock %}
